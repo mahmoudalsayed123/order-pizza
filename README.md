@@ -15,7 +15,7 @@ If you are developing a production application, we recommend using TypeScript an
 # Order Pizza
     order pizza On Website
 
-    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 => key access token
+    => key access token
 
 
     new commiting
