@@ -2,10 +2,16 @@
 import { useLoaderData } from "react-router";
 import { getOrder } from "../../services/apiResturant.";
 import OrderItem from "./OrderItem";
+import {useSelector} from "react-redux";
 
 export default function Order() {
     const order = useLoaderData();
     const { cart } = order;
+
+    // const cart = useSelector((state) => state.cart.cart);
+
+
+    console.log(cart)
 
 
     // const {pizzaId, name, quantity, unitPrice, totalPrice} = cart;
@@ -64,5 +70,6 @@ export default function Order() {
 
 export async function loader({ params }) {
     const order = await getOrder(params.id);
+    console.log(params)
     return order;
 }

@@ -49,15 +49,16 @@ export default function CreateOrder() {
     const navigation = useNavigation();
     const isSumbitting = navigation.state === "submitting";
     const userName = useSelector((state) => state.user.userName);
+
     const formError = useActionData();
     // const cart = useSelector((state) => state.cart.cart);
-    const cart = fakeCart;
+    const cart = useSelector((state) => state.cart.cart);
+
     const totalPriceOfPizzas = useSelector((state) =>
         state.cart.cart.reduce((sum, cur) => {
             return sum + cur.totalPrice;
         }, 0)
     );
-    console.log(cart)
 
     if (cart.length < 0) return <p>Cart Is Empty</p>;
 

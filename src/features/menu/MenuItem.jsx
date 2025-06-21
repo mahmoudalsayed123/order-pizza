@@ -14,6 +14,7 @@ export default function MenuItem({ pizza }) {
     pizza.quantity = 1
     pizza.totalPrice = unitPrice * 1;
     const dispatch = useDispatch();
+
     function handleItem() {
         const newItem = {
             pizzaId,
@@ -24,6 +25,7 @@ export default function MenuItem({ pizza }) {
         };
 
         dispatch(addItem(newItem));
+        console.log(newItem)
     }
 
     return (

@@ -6,7 +6,7 @@ import {clearAll} from '../cart/cartSlice'
 
 export default function Cart() {
     const cart = useSelector((state) => state.cart.cart);
-    const dispatch = useDispatch();;
+    const dispatch = useDispatch();
     
     return (
         <div className="p-3">
