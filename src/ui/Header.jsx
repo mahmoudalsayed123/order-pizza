@@ -13,7 +13,7 @@ export default function Header() {
                 </Link>
             </div>
             <div>
-                <SearchOrder />
+                {/*<SearchOrder />*/}
             </div>
             <p className="hidden md:block font-semibold">{userName}</p>
         </header>
