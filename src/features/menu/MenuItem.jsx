@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "../cart/cartSlice";
+import {addItem, decreaseItem, increaseItem} from "../cart/cartSlice";
 import DeleteBtn from "../../ui/DeleteBtn";
 
 export default function MenuItem({ pizza }) {
@@ -50,7 +50,26 @@ export default function MenuItem({ pizza }) {
             </div>
 
             {isInCart && (
-                <DeleteBtn pizzaId={pizza.id} getCurrentQuantity={getCurrentQuantity} />
+                <>
+                    <div className='absolute bottom-[10px] right-[10px] w-[200px] flex items-center justify-between me-2'>
+                        <div className="flex items-center me-5">
+                            <button
+                                onClick={() => dispatch(decreaseItem(pizzaId))}
+                                className=" flex items-center justify-center pb-2 w-[40px] h-[40px] rounded-full me-3 text-3xl bg-yellow-400 font-medium focus:ring focus:ring-yellow-300 focus:ring-offset-2 cursor-pointer"
+                            >
+                                -
+                            </button>
+                            <p className="font-bold">{getCurrentQuantity}</p>
+                            <button
+                                onClick={() => dispatch(increaseItem(pizzaId))}
+                                className="flex items-center justify-center pb-2 w-[40px] h-[40px] rounded-full ms-3 text-xl bg-yellow-400 font-medium focus:ring focus:ring-yellow-300 focus:ring-offset-2 cursor-pointer"
+                            >
+                                +
+                            </button>
+                        </div>
+                        <DeleteBtn pizzaId={pizza.id} />
+                    </div>
+                </>
             )}
 
             {!isInCart && (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
-import SearchOrder from "./SearchOrder";
+// import SearchOrder from "./SearchOrder";
 import { useSelector } from "react-redux";
 
 export default function Header() {
